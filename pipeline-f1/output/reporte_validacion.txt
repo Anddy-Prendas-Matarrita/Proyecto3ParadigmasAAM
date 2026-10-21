@@ -1,0 +1,12 @@
+REPORTE DE VALIDACIÓN
+=====================
+Entidades válidas : 6
+Relaciones válidas: 6
+Reglas aceptadas  : 5
+Estado            : OK
+
+ERRORES (0)
+  (ninguno)
+
+ADVERTENCIAS (0)
+  (ninguno)
