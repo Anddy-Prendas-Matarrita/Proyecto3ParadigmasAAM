@@ -1,0 +1,6 @@
+﻿[ENTIDADES]
+persona: Ana
+curso: Paradigmas
+
+[RELACIONES]
+lleva: Ana, Paradigmas

@@ -1,0 +1,21 @@
+﻿[ENTIDADES]
+persona: Carlos
+persona: Elena
+persona: Nuria
+curso: Cálculo
+curso: Física
+docente: José
+
+[RELACIONES]
+lleva: Carlos, Cálculo
+lleva: Elena, Cálculo
+lleva: Nuria, Física
+imparte: José, Cálculo
+imparte: José, Física
+aprueba: Elena, Cálculo
+
+[REGLAS_SOLICITADAS]
+companeros
+docente_de
+pendiente
+carga_docente

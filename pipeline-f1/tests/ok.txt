@@ -1,0 +1,22 @@
+[ENTIDADES]
+persona: Ana
+persona: Luis
+persona: Sofía
+curso: Paradigmas
+curso: Bases de Datos
+docente: María
+
+[RELACIONES]
+lleva: Ana, Paradigmas
+lleva: Luis, Paradigmas
+lleva: Sofía, Bases de Datos
+imparte: María, Paradigmas
+imparte: María, Bases de Datos
+aprueba: Ana, Paradigmas
+
+[REGLAS_SOLICITADAS]
+companeros
+curso_con_docente
+docente_de
+pendiente
+carga_docente

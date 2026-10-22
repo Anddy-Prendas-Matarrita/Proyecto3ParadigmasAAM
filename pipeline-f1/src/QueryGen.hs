@@ -76,6 +76,7 @@ generateQueries p = unlines $
   ]
   ++ zipWith fmt [1 :: Int ..] (suggestedQueries p)
   ++ [""] ++ runner
-  where
-    fmt n q = "consulta(" ++ show n ++ ", '" ++ queryDesc q ++ "', '"
-              ++ queryGoal q ++ "')."
+    where
+    fmt n q = "consulta(" ++ show n ++ ", '" ++ escQ (queryDesc q) ++ "', '"
+              ++ escQ (queryGoal q) ++ "')."
+    escQ = concatMap (\c -> if c == '\'' then "\\'" else [c])

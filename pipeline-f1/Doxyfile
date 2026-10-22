@@ -1,0 +1,15 @@
+PROJECT_NAME           = "Pipeline Haskell - Prolog - UI"
+PROJECT_BRIEF          = "Problema.txt a conocimiento.pl, consultas.pl e index.html"
+OUTPUT_DIRECTORY       = docs/doxygen
+INPUT                  = src app README.md docs/pipeline.md
+FILE_PATTERNS          = *.hs *.md
+RECURSIVE              = YES
+EXTENSION_MAPPING      = hs=C++
+FILTER_PATTERNS        = *.hs="powershell -NoProfile -File docs/hs_filter.ps1"
+USE_MDFILE_AS_MAINPAGE = docs/pipeline.md
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+OPTIMIZE_OUTPUT_FOR_C  = NO
+HAVE_DOT               = NO
+QUIET                  = YES

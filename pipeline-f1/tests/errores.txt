@@ -1,0 +1,16 @@
+﻿[ENTIDADES]
+persona: Ana
+persona: ana
+curso: Paradigmas
+curso Bases
+docente: María
+
+[RELACIONES]
+lleva: Ana, Paradigmas
+lleva: Pedro, Paradigmas
+imparte: Ana, Paradigmas
+imparte: María
+
+[REGLAS_SOLICITADAS]
+companeros
+rutas_posibles

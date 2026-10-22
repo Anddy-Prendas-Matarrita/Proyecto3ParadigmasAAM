@@ -1,0 +1,196 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261022140139
+Nombre de usuario: ALEN\alenc
+Usuario RunAs: ALEN\alenc
+Nombre de la configuración: 
+Máquina: ALEN (Microsoft Windows NT 10.0.26100.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\alenc\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 18816
+PSVersion: 5.1.26100.6725
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.6725
+BuildVersion: 10.0.26100.6725
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== Compilacion Haskell ===
+Up to date
+[OK]    cabal build
+
+=== Caso 1: entrada valida (tests\ok.txt) ===
+REPORTE DE VALIDACI├ôN
+=====================
+Entidades v├ílidas : 6
+Relaciones v├ílidas: 6
+Reglas aceptadas  : 5
+Estado            : OK
+
+ERRORES (0)
+  (ninguno)
+
+ADVERTENCIAS (0)
+  (ninguno)
+Entrada: tests\ok.txt
+Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
+0 error(es), 0 advertencia(s)
+[OK]    genera conocimiento.pl
+[OK]    genera consultas.pl
+[OK]    genera index.html
+[OK]    genera reporte_validacion.txt
+[OK]    reporte: Estado OK
+1. Todas las personas
+   persona(ana)
+   persona(luis)
+   persona(sofia)
+2. Todos los cursos
+   curso(paradigmas)
+   curso(bases_de_datos)
+3. Todos los docentes
+   docente(maria)
+4. Que curso lleva cada persona
+   lleva(ana,paradigmas)
+   lleva(luis,paradigmas)
+   lleva(sofia,bases_de_datos)
+5. Que curso imparte cada docente
+   imparte(maria,paradigmas)
+   imparte(maria,bases_de_datos)
+6. Companeros de ana
+   companeros(ana,luis)
+7. Companeros de luis
+   companeros(luis,ana)
+8. Companeros de sofia
+   (sin resultados)
+9. Docente del curso paradigmas
+   curso_con_docente(paradigmas,maria)
+10. Docente del curso bases_de_datos
+   curso_con_docente(bases_de_datos,maria)
+11. Docentes de ana
+   docente_de(ana,maria)
+12. Docentes de luis
+   docente_de(luis,maria)
+13. Docentes de sofia
+   docente_de(sofia,maria)
+14. Cursos pendientes de ana
+   (sin resultados)
+15. Cursos pendientes de luis
+   pendiente(luis,paradigmas)
+16. Cursos pendientes de sofia
+   pendiente(sofia,bases_de_datos)
+17. Carga de maria
+   carga_docente(maria,2)
+[OK]    Prolog sin warnings
+[OK]    Prolog: companeros(ana,luis)
+[OK]    Prolog: pendiente(luis,paradigmas)
+[OK]    Prolog: carga_docente(maria,2)
+[OK]    HTML contiene hechos y consultas
+
+=== Caso 2: entrada con errores (tests\errores.txt) ===
+REPORTE DE VALIDACI├ôN
+=====================
+Entidades v├ílidas : 3
+Relaciones v├ílidas: 1
+Reglas aceptadas  : 1
+Estado            : CON ERRORES
+
+ERRORES (4)
+  [l├¡nea 5] formato inv├ílido, se esperaba 'tipo: nombre'
+  [l├¡nea 12] la relaci├│n 'imparte' requiere exactamente 2 argumentos no vac├¡os
+  [l├¡nea 10] relaci├│n 'lleva: Pedro, Paradigmas': 'Pedro' no est├í declarada (se esperaba persona)
+  [l├¡nea 11] relaci├│n 'imparte: Ana, Paradigmas': 'Ana' existe pero no est├í declarada como docente
+
+ADVERTENCIAS (2)
+  [l├¡nea 3] entidad duplicada 'persona: ana' (ya declarada en l├¡nea 2), se ignora
+  [l├¡nea 16] regla 'rutas_posibles' no corresponde al dominio acad├®mico, se ignora
+Entrada: tests\errores.txt
+Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
+4 error(es), 2 advertencia(s)
+[OK]    detecta entidad duplicada
+[OK]    detecta formato invalido
+[OK]    detecta entidad no declarada (Pedro)
+[OK]    detecta regla fuera del dominio
+[OK]    detecta relacion con argumentos faltantes
+[OK]    estado CON ERRORES
+
+=== Caso 3: seccion obligatoria ausente (tests\sin_reglas.txt) ===
+REPORTE DE VALIDACI├ôN
+=====================
+Entidades v├ílidas : 2
+Relaciones v├ílidas: 1
+Reglas aceptadas  : 0
+Estado            : CON ERRORES
+
+ERRORES (1)
+  [general] falta la secci├│n obligatoria [REGLAS_SOLICITADAS]
+
+ADVERTENCIAS (0)
+  (ninguno)
+Entrada: tests\sin_reglas.txt
+Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
+1 error(es), 0 advertencia(s)
+[OK]    detecta seccion REGLAS_SOLICITADAS ausente
+
+=== Caso 4: segundo archivo (tests\otro.txt) ===
+REPORTE DE VALIDACI├ôN
+=====================
+Entidades v├ílidas : 6
+Relaciones v├ílidas: 6
+Reglas aceptadas  : 4
+Estado            : OK
+
+ERRORES (0)
+  (ninguno)
+
+ADVERTENCIAS (0)
+  (ninguno)
+Entrada: tests\otro.txt
+Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
+0 error(es), 0 advertencia(s)
+1. Todas las personas
+   persona(carlos)
+   persona(elena)
+   persona(nuria)
+2. Todos los cursos
+   curso(calculo)
+   curso(fisica)
+3. Todos los docentes
+   docente(jose)
+4. Que curso lleva cada persona
+   lleva(carlos,calculo)
+   lleva(elena,calculo)
+   lleva(nuria,fisica)
+5. Que curso imparte cada docente
+   imparte(jose,calculo)
+   imparte(jose,fisica)
+6. Companeros de carlos
+   companeros(carlos,elena)
+7. Companeros de elena
+   companeros(elena,carlos)
+8. Companeros de nuria
+   (sin resultados)
+9. Docentes de carlos
+   docente_de(carlos,jose)
+10. Docentes de elena
+   docente_de(elena,jose)
+11. Docentes de nuria
+   docente_de(nuria,jose)
+12. Cursos pendientes de carlos
+   pendiente(carlos,calculo)
+13. Cursos pendientes de elena
+   (sin resultados)
+14. Cursos pendientes de nuria
+   pendiente(nuria,fisica)
+15. Carga de jose
+   carga_docente(jose,2)
+[OK]    Prolog sin warnings
+[OK]    Prolog: companeros(carlos,elena)
+[OK]    Prolog: carga_docente(jose,2)
+[OK]    HTML regenerado con Carlos
+
+=== Resumen: 0 fallo(s) ===
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261022140143
+**********************
