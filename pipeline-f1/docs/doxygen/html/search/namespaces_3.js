@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['querygen_0',['QueryGen',['../namespace_query_gen.html',1,'']]]
+  ['parser_0',['Parser',['../namespace_parser.html',1,'']]],
+  ['prologgen_1',['PrologGen',['../namespace_prolog_gen.html',1,'']]]
 ];

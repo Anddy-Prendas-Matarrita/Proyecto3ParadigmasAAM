@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Pipeline Haskell - Prolog - UI
    </div>
-   <div id="projectbrief">Problema.txt a conocimiento.pl, consultas.pl e index.html</div>
+   <div id="projectbrief">problema.txt a conocimiento.pl, consultas.pl e index.html</div>
   </td>
  </tr>
  </tbody>
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_main_8hs.html
   <div class="headertitle"><div class="title">Main.hs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Punto de entrada: orquesta el pipeline Haskell, Prolog y UI.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -120,10 +123,15 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad070ae5b609a7cb766156aff597b6594" id="r_ad070ae5b609a7cb766156aff597b6594"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_main.html#ad070ae5b609a7cb766156aff597b6594">Main::outputDir</a> ()</td></tr>
-<tr class="memitem:a076a9bad46215d75a444de2533e7a892" id="r_a076a9bad46215d75a444de2533e7a892"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_main.html#a076a9bad46215d75a444de2533e7a892">Main::inputFrom</a> ()</td></tr>
+<tr class="memdesc:ad070ae5b609a7cb766156aff597b6594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carpeta donde se escriben los archivos generados.Tipo: FilePath.  <br /></td></tr>
+<tr class="memitem:acf1140a6c7aab07cab8688c5280568d4" id="r_acf1140a6c7aab07cab8688c5280568d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_main.html#acf1140a6c7aab07cab8688c5280568d4">Main::inputFrom</a> (int args)</td></tr>
 <tr class="memitem:a8f4d9c82bbe4af2b29f0cf5dfc4d8e7d" id="r_a8f4d9c82bbe4af2b29f0cf5dfc4d8e7d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_main.html#a8f4d9c82bbe4af2b29f0cf5dfc4d8e7d">Main::main</a> ()</td></tr>
+<tr class="memdesc:a8f4d9c82bbe4af2b29f0cf5dfc4d8e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ejecuta el pipeline completo. Lee el archivo, parsea, valida, genera los cuatro archivos de salida y muestra un resumen en consola. Termina con error si el archivo no existe.Tipo: IO ().  <br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Punto de entrada: orquesta el pipeline Haskell, Prolog y UI. </p>
+<p>Lee el archivo de entrada, construye y valida el modelo intermedio y escribe en la carpeta output: reporte_validacion.txt, conocimiento.pl, consultas.pl e index.html. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

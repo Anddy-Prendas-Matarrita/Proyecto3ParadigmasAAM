@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['sameentity_0',['sameEntity',['../namespace_validator.html#aa906a3144172a72457f9a09a6a614ece',1,'Validator']]],
-  ['script_1',['script',['../namespace_html_gen.html#a499f543669f48a2ee3255fc273bdcc26',1,'HtmlGen']]],
-  ['section_2',['section',['../namespace_html_gen.html#ac943549aeba11aa5d2201783b58762f3',1,'HtmlGen::section()'],['../namespace_validator.html#a9f74f0bd3de45b1ae0c0e2a535b18a25',1,'Validator::section()']]],
-  ['splitcommas_3',['splitCommas',['../namespace_parser.html#ac1b70102c64719de599b69a488763a9f',1,'Parser']]],
-  ['splitkey_4',['splitKey',['../namespace_parser.html#a3e7d11047d23044b85170ca390183969',1,'Parser']]],
-  ['splitsections_5',['splitSections',['../namespace_parser.html#afad05f71bbc019ea4620b15df7d29604',1,'Parser']]],
-  ['stripbom_6',['stripBOM',['../namespace_parser.html#a85ebcca5be2e56770d22f7b602ef0f53',1,'Parser']]],
-  ['suggestedqueries_7',['suggestedQueries',['../namespace_query_gen.html#a9ed0a9ff37cef22297aad066831b836c',1,'QueryGen']]]
+  ['sameentity_0',['sameEntity',['../namespace_validator.html#a7e23843124eaeaff3d8ffde5ba66dcad',1,'Validator']]],
+  ['samerelation_1',['sameRelation',['../namespace_validator.html#a959d9e8e32f640db11e677cdadb74c1e',1,'Validator']]],
+  ['script_2',['script',['../namespace_html_gen.html#a499f543669f48a2ee3255fc273bdcc26',1,'HtmlGen']]],
+  ['section_3',['Section',['../struct_types_1_1_section.html',1,'Types']]],
+  ['section_4',['section',['../namespace_html_gen.html#a58558f2412d2eb72bd86c12e08c82b2e',1,'HtmlGen::section()'],['../namespace_validator.html#ab98d517d2749d4c1ad7e24fa70c93024',1,'Validator::section()']]],
+  ['sectionlines_5',['sectionLines',['../struct_types_1_1_section.html#a61f842a052dbe2fc00b5f45e218193a4',1,'Types::Section']]],
+  ['sectionname_6',['sectionName',['../struct_types_1_1_section.html#a650366e2a7264ad8d8df675f58b249f3',1,'Types::Section']]],
+  ['severity_7',['Severity',['../struct_types_1_1_severity.html',1,'Types']]],
+  ['severity_8',['severity',['../struct_types_1_1_message.html#af628cf0873b8e91e32742d6dc40ffff7',1,'Types::Message']]],
+  ['severror_9',['SevError',['../struct_types_1_1_severity.html#a8a4288b4867781b67b867292c1dd4640',1,'Types::Severity']]],
+  ['sevwarning_10',['SevWarning',['../struct_types_1_1_severity.html#a77ea427ac4d3d274a6161dc8dd9324d2',1,'Types::Severity']]],
+  ['sourceline_11',['SourceLine',['../struct_types_1_1_source_line.html',1,'Types']]],
+  ['splitcommas_12',['splitCommas',['../namespace_parser.html#ab7f649f50b8bd599ee363b355ec39000',1,'Parser']]],
+  ['splitkey_13',['splitKey',['../namespace_parser.html#ab13c93c0d804965e375c2132e928ceff',1,'Parser']]],
+  ['splitsections_14',['splitSections',['../namespace_parser.html#aaff5c9568b89ceaad8369701eeba084c',1,'Parser']]],
+  ['srcline_15',['srcLine',['../struct_types_1_1_annotated.html#a4ee3876cdc0911e3f2139a3839770e0a',1,'Types::Annotated']]],
+  ['srctext_16',['srcText',['../struct_types_1_1_annotated.html#a1e24e1c37a9c76d1477d99816e5eeedb',1,'Types::Annotated']]],
+  ['stripbom_17',['stripBOM',['../namespace_parser.html#ae2e028a1f6245022c83624d850baadac',1,'Parser']]],
+  ['suggestedqueries_18',['suggestedQueries',['../namespace_query_gen.html#ad5f455a113dc74d4df1cfeca9ccc7350',1,'QueryGen']]]
 ];

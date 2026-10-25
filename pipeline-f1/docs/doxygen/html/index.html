@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Pipeline Haskell - Prolog - UI
    </div>
-   <div id="projectbrief">Problema.txt a conocimiento.pl, consultas.pl e index.html</div>
+   <div id="projectbrief">problema.txt a conocimiento.pl, consultas.pl e index.html</div>
   </td>
  </tr>
  </tbody>
@@ -113,9 +113,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_docs_2pipeline"></a></p>
+<p>Proyecto Integrador de Paradigmas de Programacion. El sistema transforma una descripcion textual estructurada (<span class="tt">problema.txt</span>) en una base de conocimiento Prolog, consultas sugeridas, un reporte de validacion y una interfaz web.</p>
 <p>Dominio academico: personas, cursos y docentes.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
-Flujo</h1>
+Flujo general</h1>
 <div class="fragment"><div class="line">problema.txt</div>
 <div class="line">   |  FileIO.readUTF8</div>
 <div class="line">   v</div>
@@ -123,33 +124,122 @@ Flujo</h1>
 <div class="line">   |</div>
 <div class="line">Validator.validate      -&gt; Problem limpio + errores/advertencias</div>
 <div class="line">   |</div>
-<div class="line">   +--&gt; Validator.renderReport  -&gt; reporte_validacion.txt</div>
-<div class="line">   +--&gt; PrologGen.generateKnowledge -&gt; conocimiento.pl</div>
-<div class="line">   +--&gt; QueryGen.generateQueries    -&gt; consultas.pl</div>
-<div class="line">   +--&gt; HtmlGen.generateHtml        -&gt; index.html</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<div class="line">   +--&gt; Validator.renderReport      -&gt; output/reporte_validacion.txt</div>
+<div class="line">   +--&gt; PrologGen.generateKnowledge -&gt; output/conocimiento.pl</div>
+<div class="line">   +--&gt; QueryGen.generateQueries    -&gt; output/consultas.pl</div>
+<div class="line">   +--&gt; HtmlGen.generateHtml        -&gt; output/index.html</div>
+</div><!-- fragment --><ol type="1">
+<li><b>Lectura</b>: <span class="tt"><a class="el" href="namespace_file_i_o.html#a7f3bd53f2851acfff18d7353ce04d8b0">FileIO.readUTF8</a></span> lee el archivo en UTF-8.</li>
+<li><b>Parsing</b>: <span class="tt"><a class="el" href="namespace_parser.html#aed76b6a94600c13824f5a951d141fd91">Parser.parseProblem</a></span> separa las secciones <span class="tt">[NOMBRE]</span> y convierte cada linea en un valor del modelo usando <span class="tt">Either</span>, de modo que las lineas invalidas se convierten en mensajes de error y no detienen el proceso.</li>
+<li><b>Validacion</b>: <span class="tt"><a class="el" href="namespace_validator.html#a8f9fbba0a535b4cab419089fb0cb5373">Validator.validate</a></span> elimina duplicados, descarta relaciones con entidades no declaradas y reglas fuera del dominio, y revisa las secciones.</li>
+<li><b>Generacion</b>: los cuatro generadores reciben el mismo <span class="tt">Problem</span> validado. La interfaz se construye desde ese modelo; nada esta escrito a mano.</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Modulos</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Modulo  </th><th class="markdownTableHeadNone">Responsabilidad  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_types.html">Types</a>  </td><td class="markdownTableBodyNone">Entity, Relation, Annotated, Message, Problem  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="namespace_types.html">Types</a>  </td><td class="markdownTableBodyNone">Modelo intermedio: Entity, Relation, Annotated, Message, Problem  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="namespace_file_i_o.html">FileIO</a>  </td><td class="markdownTableBodyNone">Lectura y escritura de archivos en UTF-8  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="namespace_parser.html">Parser</a>  </td><td class="markdownTableBodyNone">Secciones <span class="tt">[NOMBRE]</span> y parsing de lineas con Either  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_validator.html">Validator</a>  </td><td class="markdownTableBodyNone">Duplicados, entidades no declaradas, reglas fuera del dominio, secciones ausentes  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_prolog_gen.html">PrologGen</a>  </td><td class="markdownTableBodyNone">Hechos con trazabilidad (<span class="tt">% linea N</span>) y reglas  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="namespace_validator.html">Validator</a>  </td><td class="markdownTableBodyNone">Validaciones semanticas y reporte de texto  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_query_gen.html">QueryGen</a>  </td><td class="markdownTableBodyNone">Consultas sugeridas y <span class="tt">ejecutar_todas</span>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="namespace_prolog_gen.html">PrologGen</a>  </td><td class="markdownTableBodyNone">Hechos con trazabilidad (<span class="tt">% linea N</span>) y reglas del dominio  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_html_gen.html">HtmlGen</a>  </td><td class="markdownTableBodyNone">UI generada desde el mismo modelo  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="namespace_query_gen.html">QueryGen</a>  </td><td class="markdownTableBodyNone">Consultas sugeridas y el predicado <span class="tt">ejecutar_todas</span>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="namespace_main.html">Main</a>  </td><td class="markdownTableBodyNone">Orquestacion; acepta ruta de entrada por argumento  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="namespace_html_gen.html">HtmlGen</a>  </td><td class="markdownTableBodyNone">Interfaz web generada desde el mismo modelo  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="namespace_main.html">Main</a>  </td><td class="markdownTableBodyNone">Orquestacion; acepta la ruta de entrada por argumento  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Modelo intermedio</h1>
+<p>El modelo esta definido en el modulo <a class="el" href="namespace_types.html">Types</a>. Cada elemento se guarda dentro de <span class="tt">Annotated</span>, que conserva la linea y el texto de origen para la trazabilidad.</p>
+<div class="fragment"><div class="line">data Entity   = Person String | Course String | Teacher String</div>
+<div class="line">data Relation = Takes String String      -- lleva</div>
+<div class="line">              | Teaches String String    -- imparte</div>
+<div class="line">              | Passes String String     -- aprueba</div>
+<div class="line"> </div>
+<div class="line">data Problem = Problem</div>
+<div class="line">  { entities       :: [Annotated Entity]</div>
+<div class="line">  , relations      :: [Annotated Relation]</div>
+<div class="line">  , requestedRules :: [Annotated String]</div>
+<div class="line">  , foundSections  :: [String]</div>
+<div class="line">  , warnings       :: [Message]</div>
+<div class="line">  , errors         :: [Message]</div>
+<div class="line">  }</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Formato de entrada</h1>
+<div class="fragment"><div class="line">[ENTIDADES]</div>
+<div class="line">persona: Ana</div>
+<div class="line">curso: Paradigmas</div>
+<div class="line">docente: Maria</div>
+<div class="line"> </div>
+<div class="line">[RELACIONES]</div>
+<div class="line">lleva: Ana, Paradigmas</div>
+<div class="line">imparte: Maria, Paradigmas</div>
+<div class="line"> </div>
+<div class="line">[REGLAS_SOLICITADAS]</div>
+<div class="line">companeros</div>
+<div class="line">docente_de</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Validaciones</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Validacion  </th><th class="markdownTableHeadNone">Gravedad  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Entidades duplicadas (mismo tipo y mismo atomo Prolog)  </td><td class="markdownTableBodyNone">Advertencia, se ignora  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Relaciones duplicadas  </td><td class="markdownTableBodyNone">Advertencia, se ignora  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Relaciones con entidades no declaradas o de tipo incorrecto  </td><td class="markdownTableBodyNone">Error  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Lineas con formato invalido o tipos y relaciones desconocidos  </td><td class="markdownTableBodyNone">Error  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Secciones obligatorias ausentes  </td><td class="markdownTableBodyNone">Error  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Reglas que no corresponden al dominio  </td><td class="markdownTableBodyNone">Advertencia, se ignora  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Lineas fuera de toda seccion y secciones desconocidas  </td><td class="markdownTableBodyNone">Advertencia  </td></tr>
+</table>
+<p>El resultado se escribe en <span class="tt">reporte_validacion.txt</span> y se muestra en la interfaz, con los mensajes ordenados por numero de linea.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Ejemplo de transformacion</h1>
+<p>Linea de entrada:</p>
+<div class="fragment"><div class="line">lleva: Sofia, Bases de Datos</div>
+</div><!-- fragment --><p>Hecho generado en <span class="tt">conocimiento.pl</span>, con su comentario de trazabilidad:</p>
+<div class="fragment"><div class="line">% linea 12: lleva: Sofia, Bases de Datos</div>
+<div class="line">lleva(sofia, bases_de_datos).</div>
+</div><!-- fragment --><p>Consulta sugerida en <span class="tt">consultas.pl</span>:</p>
+<div class="fragment"><div class="line">consulta(8, &#39;Companeros de sofia&#39;, &#39;companeros(sofia, X)&#39;).</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Reglas Prolog del dominio</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Regla  </th><th class="markdownTableHeadNone">Significado  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">companeros(X, Y)  </td><td class="markdownTableBodyNone">X e Y llevan al menos un curso en comun  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">curso_con_docente(Curso, Docente)  </td><td class="markdownTableBodyNone">Docente que imparte el curso  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">docente_de(Persona, Docente)  </td><td class="markdownTableBodyNone">Docente que imparte un curso que lleva la persona  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">pendiente(Persona, Curso)  </td><td class="markdownTableBodyNone">La persona lleva el curso y no lo ha aprobado  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">carga_docente(Docente, N)  </td><td class="markdownTableBodyNone">Cantidad de cursos que imparte el docente  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Interfaz de usuario</h1>
+<p><span class="tt"><a class="el" href="namespace_html_gen.html#a296b0afb66dcdda21067de00b299107b">HtmlGen.generateHtml</a></span> produce <span class="tt">index.html</span> con entidades, relaciones, hechos Prolog, reglas, consultas sugeridas (con boton para copiar), errores y advertencias, y el contenido completo de <span class="tt">conocimiento.pl</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Uso</h1>
-<p><span class="tt">cabal run pipeline</span> o <span class="tt">cabal run pipeline -- ruta\otro.txt</span>. Cambiar <span class="tt">problema.txt</span> regenera todo en <span class="tt">output/</span> sin editar la pagina. </p>
+<div class="fragment"><div class="line">cabal run pipeline</div>
+<div class="line">cabal run pipeline -- ruta/otro.txt</div>
+</div><!-- fragment --><p>Cambiar <span class="tt">problema.txt</span> regenera todo en <span class="tt">output/</span> sin editar la pagina. Las pruebas automaticas se ejecutan con <span class="tt">run_tests.ps1</span>. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

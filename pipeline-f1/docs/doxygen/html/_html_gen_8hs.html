@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Pipeline Haskell - Prolog - UI
    </div>
-   <div id="projectbrief">Problema.txt a conocimiento.pl, consultas.pl e index.html</div>
+   <div id="projectbrief">problema.txt a conocimiento.pl, consultas.pl e index.html</div>
   </td>
  </tr>
  </tbody>
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_html_gen_8hs.
   <div class="headertitle"><div class="title">HtmlGen.hs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generacion de la interfaz web (index.html) a partir del modelo intermedio.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -119,21 +122,24 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae9b49e07f3b6549a612d3a8e42f09f38" id="r_ae9b49e07f3b6549a612d3a8e42f09f38"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#ae9b49e07f3b6549a612d3a8e42f09f38">HtmlGen::esc</a> ()</td></tr>
-<tr class="memitem:a7c4b75156e5e238e5ed7ec34020d94a2" id="r_a7c4b75156e5e238e5ed7ec34020d94a2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a7c4b75156e5e238e5ed7ec34020d94a2">HtmlGen::tag</a> ()</td></tr>
-<tr class="memitem:a516e9485c242290e2fa2fb9e3a1400ec" id="r_a516e9485c242290e2fa2fb9e3a1400ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a516e9485c242290e2fa2fb9e3a1400ec">HtmlGen::table</a> ()</td></tr>
-<tr class="memitem:ac943549aeba11aa5d2201783b58762f3" id="r_ac943549aeba11aa5d2201783b58762f3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#ac943549aeba11aa5d2201783b58762f3">HtmlGen::section</a> ()</td></tr>
-<tr class="memitem:aaf9e29c5b1570ad88568bda3a54ab1b1" id="r_aaf9e29c5b1570ad88568bda3a54ab1b1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#aaf9e29c5b1570ad88568bda3a54ab1b1">HtmlGen::pre</a> ()</td></tr>
-<tr class="memitem:afb1d0d7cf2c89499c093c1ccc0e047fe" id="r_afb1d0d7cf2c89499c093c1ccc0e047fe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#afb1d0d7cf2c89499c093c1ccc0e047fe">HtmlGen::entityInfo</a> ()</td></tr>
-<tr class="memitem:aeb6a9421b4f6bd600273c968700bfe93" id="r_aeb6a9421b4f6bd600273c968700bfe93"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#aeb6a9421b4f6bd600273c968700bfe93">HtmlGen::relationInfo</a> ()</td></tr>
-<tr class="memitem:add709dc97a39f8edf137c9875ef3eeaf" id="r_add709dc97a39f8edf137c9875ef3eeaf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#add709dc97a39f8edf137c9875ef3eeaf">HtmlGen::messageItem</a> ()</td></tr>
-<tr class="memitem:a569578c17c98b8cc1a5b3fc84add2694" id="r_a569578c17c98b8cc1a5b3fc84add2694"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a569578c17c98b8cc1a5b3fc84add2694">HtmlGen::card</a> ()</td></tr>
+<tr class="memitem:adb4d3b06c6a63bfeb435b7bde7852e6d" id="r_adb4d3b06c6a63bfeb435b7bde7852e6d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#adb4d3b06c6a63bfeb435b7bde7852e6d">HtmlGen::esc</a> (int s)</td></tr>
+<tr class="memitem:ab4b4866de033c8322fd123c2fa1b9b90" id="r_ab4b4866de033c8322fd123c2fa1b9b90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#ab4b4866de033c8322fd123c2fa1b9b90">HtmlGen::tag</a> (int t, int body)</td></tr>
+<tr class="memitem:aa8b3a266bb5a7aba350849b0b4adb026" id="r_aa8b3a266bb5a7aba350849b0b4adb026"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#aa8b3a266bb5a7aba350849b0b4adb026">HtmlGen::table</a> (int heads, int rows)</td></tr>
+<tr class="memitem:a58558f2412d2eb72bd86c12e08c82b2e" id="r_a58558f2412d2eb72bd86c12e08c82b2e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a58558f2412d2eb72bd86c12e08c82b2e">HtmlGen::section</a> (int ident, int title, int body)</td></tr>
+<tr class="memitem:a03f4033db34603c9b390507681595c42" id="r_a03f4033db34603c9b390507681595c42"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a03f4033db34603c9b390507681595c42">HtmlGen::pre</a> (int s)</td></tr>
+<tr class="memitem:ab9941ade1668a0105ac789803c2984c2" id="r_ab9941ade1668a0105ac789803c2984c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#ab9941ade1668a0105ac789803c2984c2">HtmlGen::entityInfo</a> (int e)</td></tr>
+<tr class="memitem:a2245d7df395ecc448eada13e708d6bc8" id="r_a2245d7df395ecc448eada13e708d6bc8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a2245d7df395ecc448eada13e708d6bc8">HtmlGen::relationInfo</a> (int r)</td></tr>
+<tr class="memitem:a86e7d71d32a2c50b0f98a9fc7917a2af" id="r_a86e7d71d32a2c50b0f98a9fc7917a2af"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a86e7d71d32a2c50b0f98a9fc7917a2af">HtmlGen::messageItem</a> (int m)</td></tr>
+<tr class="memitem:ab39e1148c010c4c8f3e0b0942427ea3c" id="r_ab39e1148c010c4c8f3e0b0942427ea3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#ab39e1148c010c4c8f3e0b0942427ea3c">HtmlGen::card</a> (int label, int val)</td></tr>
 <tr class="memitem:a82f21f4743b7079c25e8dea3b9715e83" id="r_a82f21f4743b7079c25e8dea3b9715e83"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a82f21f4743b7079c25e8dea3b9715e83">HtmlGen::css</a> ()</td></tr>
+<tr class="memdesc:a82f21f4743b7079c25e8dea3b9715e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hoja de estilos embebida en la pagina.Tipo: String.  <br /></td></tr>
 <tr class="memitem:a499f543669f48a2ee3255fc273bdcc26" id="r_a499f543669f48a2ee3255fc273bdcc26"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a499f543669f48a2ee3255fc273bdcc26">HtmlGen::script</a> ()</td></tr>
-<tr class="memitem:a4b603b71edf17d4e8223f0174873f650" id="r_a4b603b71edf17d4e8223f0174873f650"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a4b603b71edf17d4e8223f0174873f650">HtmlGen::generateHtml</a> ()</td></tr>
+<tr class="memdesc:a499f543669f48a2ee3255fc273bdcc26"><td class="mdescLeft">&#160;</td><td class="mdescRight">JavaScript embebido que copia una consulta al portapapeles.Tipo: String.  <br /></td></tr>
+<tr class="memitem:a296b0afb66dcdda21067de00b299107b" id="r_a296b0afb66dcdda21067de00b299107b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_html_gen.html#a296b0afb66dcdda21067de00b299107b">HtmlGen::generateHtml</a> (int p)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Generates index.html from the validated intermediate model. </p>
+<div class="textblock"><p>Generacion de la interfaz web (index.html) a partir del modelo intermedio. </p>
+<p>La pagina no se escribe a mano: cada seccion se construye con los datos del Problem validado, por lo que cambiar problema.txt regenera la interfaz. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

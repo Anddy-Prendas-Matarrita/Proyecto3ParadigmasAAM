@@ -1,16 +1,25 @@
--- | Prolog knowledge-base generation from the validated model.
+-- | @brief Generacion de la base de conocimiento Prolog (conocimiento.pl).
+--
+--   Convierte el modelo intermedio validado en hechos Prolog con comentarios
+--   de trazabilidad (linea de origen) y en las reglas del dominio academico.
 module PrologGen (generateKnowledge, atomOf, quoteAtom, entityFact, relationFact, ruleCode) where
+
 import Data.Char (isAlphaNum, isAscii, isLower, toLower)
 import Types
 
--- | Removes accents and maps to plain ASCII lowercase.
+-- | @brief Quita tildes y pasa un caracter a minuscula ASCII.
+--   @param c Caracter original.
+--   @return Caracter sin acento en minuscula.
 foldChar :: Char -> Char
 foldChar c = case toLower c of
   'á' -> 'a'; 'é' -> 'e'; 'í' -> 'i'; 'ó' -> 'o'; 'ú' -> 'u'
   'ü' -> 'u'; 'ñ' -> 'n'
   x   -> x
 
--- | Converts a name to a valid Prolog atom body: "Bases de Datos" -> bases_de_datos.
+-- | @brief Convierte un nombre en el cuerpo de un atomo Prolog valido.
+--   Ejemplo: Bases de Datos se convierte en bases_de_datos.
+--   @param s Nombre tal como aparece en problema.txt.
+--   @return Texto en minuscula ASCII con guion bajo en lugar de separadores.
 atomOf :: String -> String
 atomOf = collapse . map toUnderscore . map foldChar
   where
@@ -21,26 +30,40 @@ atomOf = collapse . map toUnderscore . map foldChar
     collapse (a : r) = a : collapse r
     collapse [] = []
 
--- | Ensures the atom starts with a lowercase letter, quoting otherwise.
+-- | @brief Garantiza que el atomo empiece con minuscula, entre comillas si es necesario.
+--   @param s Nombre original.
+--   @return Atomo Prolog listo para escribirse en el archivo.
 quoteAtom :: String -> String
 quoteAtom s = case atomOf s of
   a@(c : _) | isLower c -> a
   a                     -> "'" ++ a ++ "'"
 
+-- | @brief Genera el hecho Prolog de una entidad.
+--   @param e Entidad del modelo.
+--   @return Hecho terminado en punto, por ejemplo persona(ana).
 entityFact :: Entity -> String
 entityFact (Person n)  = "persona(" ++ quoteAtom n ++ ")."
 entityFact (Course n)  = "curso(" ++ quoteAtom n ++ ")."
 entityFact (Teacher n) = "docente(" ++ quoteAtom n ++ ")."
 
+-- | @brief Genera el hecho Prolog de una relacion.
+--   @param r Relacion del modelo.
+--   @return Hecho terminado en punto, por ejemplo lleva(ana, paradigmas).
 relationFact :: Relation -> String
 relationFact (Takes a b)   = "lleva(" ++ quoteAtom a ++ ", " ++ quoteAtom b ++ ")."
 relationFact (Teaches a b) = "imparte(" ++ quoteAtom a ++ ", " ++ quoteAtom b ++ ")."
 relationFact (Passes a b)  = "aprueba(" ++ quoteAtom a ++ ", " ++ quoteAtom b ++ ")."
 
+-- | @brief Antepone el comentario de trazabilidad a un hecho.
+--   @param a Valor anotado con su linea de origen.
+--   @param f Funcion que genera el hecho.
+--   @return Comentario con la linea, el hecho y una linea en blanco.
 traced :: Annotated a -> (a -> String) -> [String]
 traced a f = ["% linea " ++ show (srcLine a) ++ ": " ++ srcText a, f (value a), ""]
 
--- | Prolog source for each supported rule.
+-- | @brief Codigo Prolog de cada regla soportada por el dominio.
+--   @param name Nombre de la regla solicitada.
+--   @return Lineas de codigo Prolog con su comentario descriptivo.
 ruleCode :: String -> [String]
 ruleCode "companeros" =
   [ "% companeros(X, Y): X e Y llevan al menos un curso en comun."
@@ -71,6 +94,7 @@ ruleCode "carga_docente" =
   , "    length(Cs, N)." ]
 ruleCode other = ["% regla sin implementacion: " ++ other]
 
+-- | @brief Directivas Prolog que declaran los predicados dinamicos y discontiguos.
 declarations :: [String]
 declarations =
   [ ":- discontiguous persona/1, curso/1, docente/1."
@@ -78,7 +102,9 @@ declarations =
   , ":- dynamic lleva/2, imparte/2, aprueba/2."
   , "" ]
 
--- | Full text of conocimiento.pl.
+-- | @brief Genera el texto completo de conocimiento.pl.
+--   @param p Problema ya validado.
+--   @return Contenido del archivo: directivas, hechos con trazabilidad y reglas.
 generateKnowledge :: Problem -> String
 generateKnowledge p = unlines $
   [ "% ============================================"

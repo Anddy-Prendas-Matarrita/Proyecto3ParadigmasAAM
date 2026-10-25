@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['Main',['../namespace_main.html',1,'']]]
+  ['htmlgen_0',['HtmlGen',['../namespace_html_gen.html',1,'']]]
 ];

@@ -1,0 +1,13 @@
+[ENTIDADES]
+persona: Sofía
+persona: Sofia
+curso: Paradigmas
+docente: María
+
+[RELACIONES]
+lleva: Sofía, Paradigmas
+lleva: sofia, paradigmas
+imparte: María, Paradigmas
+
+[REGLAS_SOLICITADAS]
+companeros

@@ -5,6 +5,8 @@ Lee `problema.txt`, lo procesa con Haskell, genera una base de conocimiento Prol
 
 **Dominio:** académico (personas, cursos, docentes).
 
+> **Nota:** las instrucciones, el script de pruebas (`run_tests.ps1`) y el filtro de Doxygen (`docs/hs_filter.ps1`) están pensados para **Windows con PowerShell**.
+
 ## Pipeline
 
 ```
@@ -131,7 +133,7 @@ Para ver bien las tildes en la consola: `chcp 65001` (los archivos generados sie
 
 | Archivo | Descripción |
 |---|---|
-| `reporte_validacion.txt` | Errores y advertencias del procesamiento |
+| `reporte_validacion.txt` | Errores y advertencias del procesamiento, ordenados por línea |
 | `conocimiento.pl` | Base de conocimiento Prolog: hechos con comentarios de trazabilidad (`% linea N`) y reglas |
 | `consultas.pl` | Consultas sugeridas y el predicado `ejecutar_todas` |
 | `index.html` | Interfaz generada automáticamente |
@@ -151,7 +153,7 @@ swipl output\conocimiento.pl
 ?- halt.
 ```
 
-Todas las consultas sugeridas:
+Todas las consultas sugeridas (sin resultados repetidos):
 
 ```powershell
 swipl -g ejecutar_todas -t halt output\consultas.pl
@@ -193,6 +195,7 @@ carga_docente
 - Relaciones: `lleva` (persona, curso), `imparte` (docente, curso), `aprueba` (persona, curso).
 - Reglas válidas: `companeros`, `curso_con_docente`, `docente_de`, `pendiente`, `carga_docente`.
 - Líneas vacías o que empiezan con `#` se ignoran. Guardar el archivo en **UTF-8**.
+- Los nombres se comparan sin distinguir mayúsculas ni tildes (`Sofía` y `sofia` son la misma entidad).
 
 ## Reglas Prolog generadas
 
@@ -206,7 +209,8 @@ carga_docente
 
 ## Validaciones
 
-- Entidades duplicadas (advertencia, se ignoran).
+- Entidades duplicadas, por tipo y nombre equivalente (advertencia, se ignoran).
+- Relaciones duplicadas (advertencia, se ignoran).
 - Relaciones con entidades no declaradas o de tipo incorrecto (error).
 - Líneas con formato inválido (error).
 - Secciones obligatorias ausentes (error) y secciones desconocidas (advertencia).
@@ -222,14 +226,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 .\run_tests.ps1
 ```
 
-Ejecuta 4 casos (entrada válida, entrada con errores, sección ausente y segundo archivo distinto), y valida Haskell, SWI-Prolog y los archivos generados, incluida la regeneración del HTML.
-Archivos de prueba en `tests/`. Evidencia en `evidencia/pruebas.txt`; capturas del navegador y de Prolog en `evidencia/`.
+Ejecuta 5 casos: entrada válida, entrada con errores, sección ausente, segundo archivo distinto y duplicados por mayúsculas/tildes. Valida Haskell, SWI-Prolog y los archivos generados, incluida la regeneración del HTML. Al terminar restaura automáticamente la salida del `problema.txt` original.
 
-Al terminar, restaura la salida del problema original:
-
-```powershell
-cabal run pipeline
-```
+Archivos de prueba en `tests/`. La transcripción queda en `evidencia/pruebas.txt`.
+Evidencia visual (capturas): `evidencia/captura_prolog.png` (SWI-Prolog ejecutando `ejecutar_todas`) y `evidencia/captura_navegador.png` (`index.html` en el navegador).
 
 ## Documentación (Doxygen)
 
@@ -239,7 +239,17 @@ start docs\doxygen\html\index.html
 ```
 
 La explicación del pipeline está en `docs/pipeline.md` (página principal de Doxygen).
-El filtro `docs/hs_filter.ps1` convierte los comentarios `-- |` de Haskell para Doxygen.
+
+El filtro `docs/hs_filter.ps1` traduce el código Haskell a un formato que Doxygen entiende: convierte los comentarios `-- |` (con `@brief`, `@param` y `@return`), los tipos `data` con sus campos y constructores, y las firmas de funciones. Convención de comentarios:
+
+```haskell
+-- | @brief Descripción corta.
+--   @param x Qué es x.
+--   @return Qué devuelve.
+funcion :: Int -> Int
+```
+
+Los campos de un `data` se documentan con `-- ^` al final de la línea.
 
 ## Estructura
 
@@ -259,8 +269,8 @@ El filtro `docs/hs_filter.ps1` convierte los comentarios `-- |` de Haskell para 
 │   ├── PrologGen.hs     Generación de conocimiento.pl
 │   ├── QueryGen.hs      Generación de consultas.pl
 │   └── HtmlGen.hs       Generación de index.html
-├── tests/               Entradas de prueba (ok, errores, sin_reglas, otro)
-├── evidencia/           Resultado de pruebas y capturas
+├── tests/               Entradas de prueba (ok, errores, sin_reglas, otro, duplicados)
+├── evidencia/           Transcripción de pruebas y capturas
 ├── docs/                pipeline.md, hs_filter.ps1 y salida de Doxygen
 └── output/              Archivos generados
 ```
@@ -276,6 +286,7 @@ El filtro `docs/hs_filter.ps1` convierte los comentarios `-- |` de Haskell para 
 | `no .cabal package file` | Ejecutar desde la carpeta que contiene `pipeline-fl.cabal` |
 | `missing-home-modules` (warning) | Agregar el módulo a `other-modules` en `pipeline-fl.cabal` |
 | `Doxygen: input source does not exist` | Ejecutar `doxygen Doxyfile` desde la raíz del proyecto |
+| Doxygen no muestra los tipos o funciones | Verificar que `docs/hs_filter.ps1` sea la versión nueva y que PowerShell esté disponible |
 | `run_tests.ps1` no se reconoce | Estar en la raíz del proyecto y ejecutar `Set-ExecutionPolicy Bypass -Scope Process -Force` |
 | Caracteres raros en consola (`├ô`) | `chcp 65001`; el archivo generado está bien |
 | Pegar dos comandos juntos falla | Ejecutar un comando por línea |
