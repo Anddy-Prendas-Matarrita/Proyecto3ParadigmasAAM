@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quoteatom_0',['quoteAtom',['../namespace_prolog_gen.html#a30b88f42948dbc3e6f8bffa913d54084',1,'PrologGen']]]
+  ['quoteatom_0',['quoteAtom',['../namespace_prolog_gen.html#a0ac790b1188bf54d05a454eca13fd93e',1,'PrologGen']]]
 ];

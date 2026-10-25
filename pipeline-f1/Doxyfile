@@ -1,15 +1,34 @@
+# Doxyfile del proyecto Pipeline Haskell - Prolog - UI
+# Uso (desde la raiz del proyecto):  doxygen Doxyfile
+# Resultado: docs/doxygen/html/index.html
+# Nota: el filtro docs/hs_filter.ps1 requiere Windows PowerShell.
+
+DOXYFILE_ENCODING      = UTF-8
+INPUT_ENCODING         = UTF-8
 PROJECT_NAME           = "Pipeline Haskell - Prolog - UI"
-PROJECT_BRIEF          = "Problema.txt a conocimiento.pl, consultas.pl e index.html"
+PROJECT_BRIEF          = "problema.txt a conocimiento.pl, consultas.pl e index.html"
 OUTPUT_DIRECTORY       = docs/doxygen
-INPUT                  = src app README.md docs/pipeline.md
+
+# Entradas: codigo Haskell y la pagina principal con la explicacion del pipeline
+INPUT                  = src app docs/pipeline.md
 FILE_PATTERNS          = *.hs *.md
 RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = docs/pipeline.md
+
+# Haskell se procesa con el filtro que convierte los comentarios a formato Doxygen
 EXTENSION_MAPPING      = hs=C++
 FILTER_PATTERNS        = *.hs="powershell -NoProfile -File docs/hs_filter.ps1"
-USE_MDFILE_AS_MAINPAGE = docs/pipeline.md
+
+# Extraccion y salida
 EXTRACT_ALL            = YES
+MARKDOWN_SUPPORT       = YES
 GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
 OPTIMIZE_OUTPUT_FOR_C  = NO
 HAVE_DOT               = NO
-QUIET                  = YES
+
+# Mostrar advertencias (poner QUIET = YES para silenciar al entregar)
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO

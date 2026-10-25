@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['haskell_20prolog_20ui_0',['Pipeline Haskell -&amp;gt; Prolog -&amp;gt; UI',['../index.html',1,'']]]
+  ['ejemplo_20de_20transformacion_0',['Ejemplo de transformacion',['../index.html#autotoc_md6',1,'']]],
+  ['entrada_1',['Formato de entrada',['../index.html#autotoc_md4',1,'']]]
 ];

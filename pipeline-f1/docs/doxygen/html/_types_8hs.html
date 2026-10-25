@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Pipeline Haskell - Prolog - UI
    </div>
-   <div id="projectbrief">Problema.txt a conocimiento.pl, consultas.pl e index.html</div>
+   <div id="projectbrief">problema.txt a conocimiento.pl, consultas.pl e index.html</div>
   </td>
  </tr>
  </tbody>
@@ -112,13 +112,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_types_8hs.htm
   <div class="headertitle"><div class="title">Types.hs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Modelo intermedio del pipeline Haskell, Prolog y UI.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Types_3A_3ASourceLine" id="r_Types_3A_3ASourceLine"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_source_line.html">Types::SourceLine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linea cruda del archivo de entrada junto con su numero.  <a href="struct_types_1_1_source_line.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3ASection" id="r_Types_3A_3ASection"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_section.html">Types::Section</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seccion del archivo de entrada, por ejemplo la seccion ENTIDADES.  <a href="struct_types_1_1_section.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3AEntity" id="r_Types_3A_3AEntity"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_entity.html">Types::Entity</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entidad declarada en la seccion ENTIDADES.  <a href="struct_types_1_1_entity.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3ARelation" id="r_Types_3A_3ARelation"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_relation.html">Types::Relation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relacion declarada en la seccion RELACIONES.  <a href="struct_types_1_1_relation.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3AAnnotated" id="r_Types_3A_3AAnnotated"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_annotated.html">Types::Annotated</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor con trazabilidad: guarda la linea y el texto de origen.  <a href="struct_types_1_1_annotated.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3ASeverity" id="r_Types_3A_3ASeverity"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_severity.html">Types::Severity</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gravedad de un mensaje de validacion.  <a href="struct_types_1_1_severity.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3AMessage" id="r_Types_3A_3AMessage"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_message.html">Types::Message</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mensaje de error o advertencia producido por el <a class="el" href="namespace_parser.html">Parser</a> o el <a class="el" href="namespace_validator.html">Validator</a>.  <a href="struct_types_1_1_message.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Types_3A_3AProblem" id="r_Types_3A_3AProblem"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_types_1_1_problem.html">Types::Problem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Problema completo: es el modelo intermedio que usan todos los generadores.  <a href="struct_types_1_1_problem.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:Types" id="r_Types"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespace_types.html">Types</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Intermediate model of the pipeline. </p>
+<div class="textblock"><p>Modelo intermedio del pipeline Haskell, Prolog y UI. </p>
+<p>Contiene los tipos de datos propios con los que se representa el problema leido desde problema.txt. El <a class="el" href="namespace_parser.html">Parser</a> los construye, el <a class="el" href="namespace_validator.html">Validator</a> los depura y los generadores (<a class="el" href="namespace_prolog_gen.html">PrologGen</a>, <a class="el" href="namespace_query_gen.html">QueryGen</a> y <a class="el" href="namespace_html_gen.html">HtmlGen</a>) los consumen. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

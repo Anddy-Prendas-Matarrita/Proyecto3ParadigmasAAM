@@ -24,12 +24,13 @@ consulta(15, 'Cursos pendientes de luis', 'pendiente(luis, C)').
 consulta(16, 'Cursos pendientes de sofia', 'pendiente(sofia, C)').
 consulta(17, 'Carga de maria', 'carga_docente(maria, N)').
 
-% Ejecuta todas las consultas y muestra sus resultados.
+% Ejecuta todas las consultas y muestra sus resultados (sin repetidos).
 ejecutar_todas :-
     forall(consulta(N, Desc, Texto),
            ( format('~w. ~w~n', [N, Desc]),
              term_to_atom(Goal, Texto),
-             findall(Goal, Goal, Rs),
+             findall(Goal, Goal, Rs0),
+             list_to_set(Rs0, Rs),
              (   Rs == []
              ->  format('   (sin resultados)~n')
              ;   forall(member(R, Rs), format('   ~q~n', [R]))

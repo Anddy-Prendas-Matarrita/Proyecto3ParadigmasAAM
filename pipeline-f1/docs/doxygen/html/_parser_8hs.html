@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Pipeline Haskell - Prolog - UI
    </div>
-   <div id="projectbrief">Problema.txt a conocimiento.pl, consultas.pl e index.html</div>
+   <div id="projectbrief">problema.txt a conocimiento.pl, consultas.pl e index.html</div>
   </td>
  </tr>
  </tbody>
@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_parser_8hs.ht
   <div class="headertitle"><div class="title">Parser.hs File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Separacion en secciones y parsing funcional hacia el modelo intermedio.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -119,24 +122,25 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a409dbc9972b22481e812eefedaafd88b" id="r_a409dbc9972b22481e812eefedaafd88b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a409dbc9972b22481e812eefedaafd88b">Parser::trim</a> ()</td></tr>
-<tr class="memitem:a85ebcca5be2e56770d22f7b602ef0f53" id="r_a85ebcca5be2e56770d22f7b602ef0f53"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a85ebcca5be2e56770d22f7b602ef0f53">Parser::stripBOM</a> ()</td></tr>
-<tr class="memitem:a00a07584ef59cd8907f894139216ae43" id="r_a00a07584ef59cd8907f894139216ae43"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a00a07584ef59cd8907f894139216ae43">Parser::numberLines</a> ()</td></tr>
-<tr class="memitem:a8f9dc3873cc710a80bc56648761be477" id="r_a8f9dc3873cc710a80bc56648761be477"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a8f9dc3873cc710a80bc56648761be477">Parser::isUseful</a> ()</td></tr>
-<tr class="memitem:aeaf318245cce88e13bbe26890846fbb2" id="r_aeaf318245cce88e13bbe26890846fbb2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#aeaf318245cce88e13bbe26890846fbb2">Parser::parseHeader</a> ()</td></tr>
-<tr class="memitem:afad05f71bbc019ea4620b15df7d29604" id="r_afad05f71bbc019ea4620b15df7d29604"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#afad05f71bbc019ea4620b15df7d29604">Parser::splitSections</a> ()</td></tr>
-<tr class="memitem:a6b10b8f2b0306376ccae4b3660ec2cb3" id="r_a6b10b8f2b0306376ccae4b3660ec2cb3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a6b10b8f2b0306376ccae4b3660ec2cb3">Parser::linesOf</a> ()</td></tr>
-<tr class="memitem:a3e7d11047d23044b85170ca390183969" id="r_a3e7d11047d23044b85170ca390183969"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a3e7d11047d23044b85170ca390183969">Parser::splitKey</a> ()</td></tr>
-<tr class="memitem:ac1b70102c64719de599b69a488763a9f" id="r_ac1b70102c64719de599b69a488763a9f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#ac1b70102c64719de599b69a488763a9f">Parser::splitCommas</a> ()</td></tr>
-<tr class="memitem:a58b4ec468a985cd57b696b6ab29c1a34" id="r_a58b4ec468a985cd57b696b6ab29c1a34"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a58b4ec468a985cd57b696b6ab29c1a34">Parser::errorAt</a> ()</td></tr>
-<tr class="memitem:a786a4af4bca8d17742c47f838cc0a4f9" id="r_a786a4af4bca8d17742c47f838cc0a4f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a786a4af4bca8d17742c47f838cc0a4f9">Parser::annotate</a> ()</td></tr>
-<tr class="memitem:aafbec5f574742f631cdabe6540a90a41" id="r_aafbec5f574742f631cdabe6540a90a41"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#aafbec5f574742f631cdabe6540a90a41">Parser::parseEntity</a> ()</td></tr>
-<tr class="memitem:aeec6687826df0d8cc05c1260cd93487c" id="r_aeec6687826df0d8cc05c1260cd93487c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#aeec6687826df0d8cc05c1260cd93487c">Parser::parseRelation</a> ()</td></tr>
-<tr class="memitem:af2ab43e172ef5d0fe446d3d2dfa22eee" id="r_af2ab43e172ef5d0fe446d3d2dfa22eee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#af2ab43e172ef5d0fe446d3d2dfa22eee">Parser::parseRule</a> ()</td></tr>
-<tr class="memitem:ab534c33911623c9cdcea5797a62f6687" id="r_ab534c33911623c9cdcea5797a62f6687"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#ab534c33911623c9cdcea5797a62f6687">Parser::parseProblem</a> ()</td></tr>
+<tr class="memitem:a47192f6c2c850d1b7cb525aa3d8253f4" id="r_a47192f6c2c850d1b7cb525aa3d8253f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a47192f6c2c850d1b7cb525aa3d8253f4">Parser::trim</a> (int s)</td></tr>
+<tr class="memitem:ae2e028a1f6245022c83624d850baadac" id="r_ae2e028a1f6245022c83624d850baadac"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#ae2e028a1f6245022c83624d850baadac">Parser::stripBOM</a> (int s)</td></tr>
+<tr class="memitem:a6f71f2ce958317a85e28fba978732ed7" id="r_a6f71f2ce958317a85e28fba978732ed7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a6f71f2ce958317a85e28fba978732ed7">Parser::numberLines</a> (int s)</td></tr>
+<tr class="memitem:afc54113fe98ef9540dd5f0e86005e72e" id="r_afc54113fe98ef9540dd5f0e86005e72e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#afc54113fe98ef9540dd5f0e86005e72e">Parser::isUseful</a> (int l)</td></tr>
+<tr class="memitem:a3439da26dd6ccad6680a03199bec53e9" id="r_a3439da26dd6ccad6680a03199bec53e9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a3439da26dd6ccad6680a03199bec53e9">Parser::parseHeader</a> (int s)</td></tr>
+<tr class="memitem:aaff5c9568b89ceaad8369701eeba084c" id="r_aaff5c9568b89ceaad8369701eeba084c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#aaff5c9568b89ceaad8369701eeba084c">Parser::splitSections</a> (int ls)</td></tr>
+<tr class="memitem:a38f8b9e664473517363fa30077277baf" id="r_a38f8b9e664473517363fa30077277baf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a38f8b9e664473517363fa30077277baf">Parser::linesOf</a> (int n, int ss)</td></tr>
+<tr class="memitem:ab13c93c0d804965e375c2132e928ceff" id="r_ab13c93c0d804965e375c2132e928ceff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#ab13c93c0d804965e375c2132e928ceff">Parser::splitKey</a> (int s)</td></tr>
+<tr class="memitem:ab7f649f50b8bd599ee363b355ec39000" id="r_ab7f649f50b8bd599ee363b355ec39000"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#ab7f649f50b8bd599ee363b355ec39000">Parser::splitCommas</a> (int s)</td></tr>
+<tr class="memitem:a54c7f82767ca9e8678debadde87537fc" id="r_a54c7f82767ca9e8678debadde87537fc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a54c7f82767ca9e8678debadde87537fc">Parser::errorAt</a> (int l, int msg)</td></tr>
+<tr class="memitem:a9dd91802a1aaf98707780ba73a8aebb5" id="r_a9dd91802a1aaf98707780ba73a8aebb5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a9dd91802a1aaf98707780ba73a8aebb5">Parser::annotate</a> (int l, int x)</td></tr>
+<tr class="memitem:a766086852b3fb252d124746a0f8ea36b" id="r_a766086852b3fb252d124746a0f8ea36b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a766086852b3fb252d124746a0f8ea36b">Parser::parseEntity</a> (int l)</td></tr>
+<tr class="memitem:a53ae248bb31ac958abfb572ce295f784" id="r_a53ae248bb31ac958abfb572ce295f784"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a53ae248bb31ac958abfb572ce295f784">Parser::parseRelation</a> (int l)</td></tr>
+<tr class="memitem:a081ee86ea2cb6521bc9eaa684d59d147" id="r_a081ee86ea2cb6521bc9eaa684d59d147"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#a081ee86ea2cb6521bc9eaa684d59d147">Parser::parseRule</a> (int l)</td></tr>
+<tr class="memitem:aed76b6a94600c13824f5a951d141fd91" id="r_aed76b6a94600c13824f5a951d141fd91"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespace_parser.html#aed76b6a94600c13824f5a951d141fd91">Parser::parseProblem</a> (int txt)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Section splitting and functional parsing into the intermediate model. </p>
+<div class="textblock"><p>Separacion en secciones y parsing funcional hacia el modelo intermedio. </p>
+<p>Todas las funciones de este modulo son puras: reciben el texto de problema.txt y devuelven un Problem sin realizar entrada o salida. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

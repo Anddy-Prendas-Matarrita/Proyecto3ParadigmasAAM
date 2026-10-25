@@ -1,3 +1,8 @@
+-- | @brief Punto de entrada: orquesta el pipeline Haskell, Prolog y UI.
+--
+--   Lee el archivo de entrada, construye y valida el modelo intermedio y
+--   escribe en la carpeta output: reporte_validacion.txt, conocimiento.pl,
+--   consultas.pl e index.html.
 module Main (main) where
 
 import FileIO (readUTF8, writeUTF8)
@@ -12,17 +17,24 @@ import System.IO (hPutStrLn, hSetEncoding, stderr, stdout, utf8)
 import Types
 import Validator (renderReport, validate)
 
+-- | @brief Carpeta donde se escriben los archivos generados.
 outputDir :: FilePath
 outputDir = "output"
 
--- | Input path: first CLI argument, or problema.txt by default.
+-- | @brief Obtiene la ruta del archivo de entrada.
+--   @param args Argumentos de linea de comandos.
+--   @return La primera ruta recibida, o problema.txt por defecto.
 inputFrom :: [String] -> FilePath
 inputFrom (x : _) = x
 inputFrom []      = "problema.txt"
 
+-- | @brief Ejecuta el pipeline completo.
+--   Lee el archivo, parsea, valida, genera los cuatro archivos de salida
+--   y muestra un resumen en consola. Termina con error si el archivo no existe.
 main :: IO ()
 main = do
   hSetEncoding stdout utf8
+  hSetEncoding stderr utf8
   input  <- inputFrom <$> getArgs
   exists <- doesFileExist input
   if not exists

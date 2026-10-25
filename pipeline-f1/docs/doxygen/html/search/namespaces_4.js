@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['types_0',['Types',['../namespace_types.html',1,'']]]
+  ['querygen_0',['QueryGen',['../namespace_query_gen.html',1,'']]]
 ];

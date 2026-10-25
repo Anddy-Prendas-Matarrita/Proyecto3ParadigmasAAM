@@ -1,30 +1,35 @@
 ﻿**********************
 Inicio de la transcripción de Windows PowerShell
-Hora de inicio: 20261022140139
-Nombre de usuario: ALEN\alenc
-Usuario RunAs: ALEN\alenc
+Hora de inicio: 20261025133124
+Nombre de usuario: ANDDYPM\Anddy Prendas
+Usuario RunAs: ANDDYPM\Anddy Prendas
 Nombre de la configuración: 
-Máquina: ALEN (Microsoft Windows NT 10.0.26100.0)
-Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\alenc\AppData\Local\Programs\Microsoft VS Code\6d62b1d5da\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
-Id. de proceso: 18816
-PSVersion: 5.1.26100.6725
+Máquina: ANDDYPM (Microsoft Windows NT 10.0.26200.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Id. de proceso: 5260
+PSVersion: 5.1.26100.9444
 PSEdition: Desktop
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.6725
-BuildVersion: 10.0.26100.6725
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
 CLRVersion: 4.0.30319.42000
 WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
 === Compilacion Haskell ===
-Up to date
+Build profile: -w ghc-9.10.3 -O1
+In order, the following will be built (use -v for more details):
+ - pipeline-fl-0.1.0.0 (exe:pipeline) (configuration changed)
+Configuring executable 'pipeline' for pipeline-fl-0.1.0.0...
+Preprocessing executable 'pipeline' for pipeline-fl-0.1.0.0...
+Building executable 'pipeline' for pipeline-fl-0.1.0.0...
 [OK]    cabal build
 
 === Caso 1: entrada valida (tests\ok.txt) ===
-REPORTE DE VALIDACI├ôN
+REPORTE DE VALIDACIÓN
 =====================
-Entidades v├ílidas : 6
-Relaciones v├ílidas: 6
+Entidades válidas : 6
+Relaciones válidas: 6
 Reglas aceptadas  : 5
 Estado            : OK
 
@@ -88,22 +93,22 @@ Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validaci
 [OK]    HTML contiene hechos y consultas
 
 === Caso 2: entrada con errores (tests\errores.txt) ===
-REPORTE DE VALIDACI├ôN
+REPORTE DE VALIDACIÓN
 =====================
-Entidades v├ílidas : 3
-Relaciones v├ílidas: 1
+Entidades válidas : 3
+Relaciones válidas: 1
 Reglas aceptadas  : 1
 Estado            : CON ERRORES
 
 ERRORES (4)
-  [l├¡nea 5] formato inv├ílido, se esperaba 'tipo: nombre'
-  [l├¡nea 12] la relaci├│n 'imparte' requiere exactamente 2 argumentos no vac├¡os
-  [l├¡nea 10] relaci├│n 'lleva: Pedro, Paradigmas': 'Pedro' no est├í declarada (se esperaba persona)
-  [l├¡nea 11] relaci├│n 'imparte: Ana, Paradigmas': 'Ana' existe pero no est├í declarada como docente
+  [línea 5] formato inválido, se esperaba 'tipo: nombre'
+  [línea 10] relación 'lleva: Pedro, Paradigmas': 'Pedro' no está declarada (se esperaba persona)
+  [línea 11] relación 'imparte: Ana, Paradigmas': 'Ana' existe pero no está declarada como docente
+  [línea 12] la relación 'imparte' requiere exactamente 2 argumentos no vacíos
 
 ADVERTENCIAS (2)
-  [l├¡nea 3] entidad duplicada 'persona: ana' (ya declarada en l├¡nea 2), se ignora
-  [l├¡nea 16] regla 'rutas_posibles' no corresponde al dominio acad├®mico, se ignora
+  [línea 3] entidad duplicada 'persona: ana' (ya declarada en línea 2), se ignora
+  [línea 16] regla 'rutas_posibles' no corresponde al dominio académico, se ignora
 Entrada: tests\errores.txt
 Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
 4 error(es), 2 advertencia(s)
@@ -113,17 +118,19 @@ Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validaci
 [OK]    detecta regla fuera del dominio
 [OK]    detecta relacion con argumentos faltantes
 [OK]    estado CON ERRORES
+[OK]    conocimiento.pl con errores sigue cargando en Prolog
+[OK]    HTML muestra los errores
 
 === Caso 3: seccion obligatoria ausente (tests\sin_reglas.txt) ===
-REPORTE DE VALIDACI├ôN
+REPORTE DE VALIDACIÓN
 =====================
-Entidades v├ílidas : 2
-Relaciones v├ílidas: 1
+Entidades válidas : 2
+Relaciones válidas: 1
 Reglas aceptadas  : 0
 Estado            : CON ERRORES
 
 ERRORES (1)
-  [general] falta la secci├│n obligatoria [REGLAS_SOLICITADAS]
+  [general] falta la sección obligatoria [REGLAS_SOLICITADAS]
 
 ADVERTENCIAS (0)
   (ninguno)
@@ -133,10 +140,10 @@ Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validaci
 [OK]    detecta seccion REGLAS_SOLICITADAS ausente
 
 === Caso 4: segundo archivo (tests\otro.txt) ===
-REPORTE DE VALIDACI├ôN
+REPORTE DE VALIDACIÓN
 =====================
-Entidades v├ílidas : 6
-Relaciones v├ílidas: 6
+Entidades válidas : 6
+Relaciones válidas: 6
 Reglas aceptadas  : 4
 Estado            : OK
 
@@ -189,8 +196,31 @@ Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validaci
 [OK]    Prolog: carga_docente(jose,2)
 [OK]    HTML regenerado con Carlos
 
+=== Caso 5: duplicados por mayusculas y tildes (tests\duplicados.txt) ===
+REPORTE DE VALIDACIÓN
+=====================
+Entidades válidas : 3
+Relaciones válidas: 2
+Reglas aceptadas  : 1
+Estado            : OK
+
+ERRORES (0)
+  (ninguno)
+
+ADVERTENCIAS (2)
+  [línea 3] entidad duplicada 'persona: Sofia' (ya declarada en línea 2), se ignora
+  [línea 9] relación duplicada 'lleva: sofia, paradigmas' (ya declarada en línea 8), se ignora
+Entrada: tests\duplicados.txt
+Generado en output/: conocimiento.pl, consultas.pl, index.html, reporte_validacion.txt
+0 error(es), 2 advertencia(s)
+[OK]    detecta entidad duplicada (Sofia igual a Sofia con tilde)
+[OK]    detecta relacion duplicada
+[OK]    hecho lleva(sofia, paradigmas) aparece una sola vez
+
+=== Restaurando salida del problema original (problema.txt) ===
+
 === Resumen: 0 fallo(s) ===
 **********************
 Fin de la transcripción de Windows PowerShell
-Hora de finalización: 20261022140143
+Hora de finalización: 20261025133127
 **********************

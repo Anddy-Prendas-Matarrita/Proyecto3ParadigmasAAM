@@ -1,8 +1,12 @@
 var _query_gen_8hs =
 [
+    [ "QueryGen::Query", "struct_query_gen_1_1_query.html", "struct_query_gen_1_1_query" ],
     [ "QueryGen::baseQueries", "namespace_query_gen.html#aeabc1fe8504e11f7397ce8ffa1250229", null ],
-    [ "QueryGen::generateQueries", "namespace_query_gen.html#a69c173fcdb9b5a5b694e14cb60ae8e64", null ],
-    [ "QueryGen::ruleQueries", "namespace_query_gen.html#a395b93e30eae03c272c118e8314c273a", null ],
+    [ "QueryGen::courses", "namespace_query_gen.html#a450986b5713760bec7bcb76bacef5411", null ],
+    [ "QueryGen::generateQueries", "namespace_query_gen.html#aa56bcf6d098d9a2f537de6f4c2ace37f", null ],
+    [ "QueryGen::persons", "namespace_query_gen.html#a714619dd9a878c7db6d871beec6951b8", null ],
+    [ "QueryGen::ruleQueries", "namespace_query_gen.html#acb66492436e1d775da8d26aaf83d83ff", null ],
     [ "QueryGen::runner", "namespace_query_gen.html#a86826711d328caeb67a60e6ac4addc34", null ],
-    [ "QueryGen::suggestedQueries", "namespace_query_gen.html#a9ed0a9ff37cef22297aad066831b836c", null ]
+    [ "QueryGen::suggestedQueries", "namespace_query_gen.html#ad5f455a113dc74d4df1cfeca9ccc7350", null ],
+    [ "QueryGen::teachers", "namespace_query_gen.html#aff64d95b9a0485a9bdd0354d3d648f07", null ]
 ];
